@@ -54,8 +54,8 @@ Supports **Admin, Manager, and Buyer** roles with role-based dashboards, product
 ## 🛠 Technologies Used
 
 **Frontend:** React.js, Tailwind CSS, React Router, Framer Motion, React Hook Form, Axios  
-**Backend:** Node.js, Express.js, MongoDB, Mongoose, JWT/Firebase Auth  
-**Deployment:** Vercel / Netlify (Frontend), Render / Railway / Heroku (Backend)  
+**Backend:** Node.js, Express.js, MongoDB, JWT/Firebase Auth  
+**Deployment:** firebase (Frontend), vercel(Backend)  
 
 ---
 
@@ -82,15 +82,17 @@ npm install
 # REACT_APP_BACKEND_URL=your_backend_url
 npm start
 🧑‍💻 Test Credentials
-Role	Email	Password
-Admin	admin@example.com	Admin@123
-Manager	manager@example.com	Manager@123
-Buyer	user@example.com	User@123
+
+Admin Email :	admin@example.com	
+Admin Password: Admin@123
+Manager email :	manager@example.com	 
+Manager Password : Manager@123
+
 
 📂 Repository Links
-Server: Server Repo Link
+Server: REPO LINK DIte hbe 
 
-Client: Client Repo Link
+Client: https://github.com/rimiakter4/ph-11th-Assignment.git
 
 🎨 UI & Design Resources
 Modern and professional layout inspired by e-commerce & production dashboards
