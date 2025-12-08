@@ -7,7 +7,7 @@ const Footer = () => {
 
         {/* ----- Logo & Description ----- */}
         <div>
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-teal-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-2xl font-extrabold bg-gradient-to-r from-teal-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
             GarmentFlow
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-gray-400">
