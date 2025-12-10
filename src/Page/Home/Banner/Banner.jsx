@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const Home = () => {
   return (
-    <section className="bg-gray-50 min-h-screen flex items-center">
+    <section  className="bg-gray-50 min-h-screen flex items-center bg-gradient-to-r from-teal-400/30 via-indigo-500/30 to-purple-500/30 ">
       <div className="container mx-auto px-6 py-16 flex flex-col md:flex-row gap-12 md:gap-14 items-center">
 
         {/* ================= LEFT CONTENT ================= */}

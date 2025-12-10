@@ -5,7 +5,7 @@ import Fotter from '../Page/Shared/Fotter/Fotter';
 
 const RootLayOuts = () => {
     return (
-        <div>
+        <div className=' '>
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Fotter></Fotter>
