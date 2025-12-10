@@ -14,13 +14,13 @@ export default function Brands() {
   ];
 
   return (
-    <section className="py-10 mb-11  bg-white">
+    <section className="py-10 mb-11 bg-white">
       <div className="container mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl   font-bold mb-20"
+          className="text-3xl font-bold mb-20"
         >
           Our Trusted Brands
         </motion.h2>
@@ -28,10 +28,20 @@ export default function Brands() {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={30}
-          slidesPerView={3}
           loop={true}
           autoplay={{ delay: 1500, disableOnInteraction: false }}
           className="py-6"
+          breakpoints={{
+            0: {
+              slidesPerView: 1, // Small devices
+            },
+            768: {
+              slidesPerView: 2, // Medium devices
+            },
+            1024: {
+              slidesPerView: 3, // Large devices
+            },
+          }}
         >
           {brands.map((b, idx) => (
             <SwiperSlide key={idx}>

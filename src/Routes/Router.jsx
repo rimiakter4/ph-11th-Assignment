@@ -3,6 +3,8 @@ import RootLayOuts from "../LayOuts/RootLayOuts";
 
 import Eorr from "../Page/Eorr";
 import Home from "../Page/Home/Home";
+import Login from "../Page/Login/Login";
+import Register from "../Page/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +15,11 @@ const router = createBrowserRouter([
     index: true,
     Component:Home
     },{
-path:''
+path:'login',
+Component:Login
+    },{
+      path:'register',
+      Component:Register
     }
   ]
   },

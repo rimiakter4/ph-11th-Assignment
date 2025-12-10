@@ -1,18 +1,27 @@
 import React from 'react';
 import Logo from './Logo';
 import { NavLink } from 'react-router';
+import useAuth from '../../../Hooks/useAuth';
+import { toast } from 'react-toastify';
 
 const NavBar = () => {
+  const {user,logout}=useAuth()
+  const handellogout = () => {
+    logout()
+      .then(() => toast("LogOut successfully"))
+      .catch(err => console.log(err));
+  };
     const links=<> 
 <li><NavLink to='/'>Home</NavLink></li>
-<li><NavLink to='/coverage'>Coverage</NavLink></li>
-<li><NavLink to='/sender'>Send Parcel</NavLink></li>
-<li><NavLink>About Us</NavLink></li>
+<li><NavLink to='/coverage'>All-Product</NavLink></li>
+{
+  user?<li><NavLink to='/dashboard'>Dashboard</NavLink></li>:<li><NavLink to='/sender'>About Us</NavLink></li>
+}
+{/* {
+  user?<li><NavLink to='/coverage'> User Avatar</NavLink></li>:''
+} */}
 
 
-<li><NavLink>Pricing</NavLink></li>
-<li><NavLink>Blog</NavLink></li>
-<li><NavLink>Contact</NavLink></li>
 
 
 </>
@@ -33,14 +42,57 @@ const NavBar = () => {
  
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal font-semibold text-[16px] px-1">
      {
         links
      }
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="navbar-end gap-2">
+
+          {user && (
+            <div className="relative group cursor-pointer">
+              <img
+                src={user.photoURL}
+                alt="profile"
+                className="w-12 h-12 rounded-full border-2 border-white transition duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:border-sky-300"
+              />
+  
+
+              <span
+                className="
+                  absolute opacity-0 group-hover:opacity-100
+                  transition-all duration-300 ease-in-out
+                  bg-black/80 backdrop-blur-md text-white
+                  text-sm px-4 py-1 rounded-xl shadow-lg
+                  whitespace-nowrap
+                  left-1/2 -translate-x-1/2
+                  top-14 group-hover:top-16
+                "
+              >
+                {user.displayName}
+              </span>
+            </div>
+          )}
+
+
+{!user && (
+            <NavLink to='/register' className="btn bg-gradient-to-r rounded-xl from-teal-400 to-indigo-500 text-white font-bold  w-[100px]">
+             Register
+            </NavLink>
+          )}
+
+          {user ? (
+            <button onClick={handellogout} className="btn bg-gradient-to-r rounded-xl from-teal-400 to-indigo-500 text-white font-bold  w-[100px]">
+              Log out
+            </button>
+          ) : (
+            <NavLink to='/login' className="btn bg-gradient-to-r rounded-xl from-teal-400 to-indigo-500 text-white font-bold  w-[100px]">
+              Log in
+            </NavLink>
+          )}
+
+
   </div>
 </div>
     );
