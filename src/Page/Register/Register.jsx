@@ -6,10 +6,13 @@ import { motion } from "framer-motion";
 import { updateProfile } from "firebase/auth";
 import { useState } from "react";
 import useAuth from "../../Hooks/useAuth";
+import useAxios from "../../Hooks/useAxios";
+import axios from "axios";
 
 export default function Register() {
   const { creatUser, setUser, googlelogin } = useAuth();
   const navigate = useNavigate();
+  const axiosSecure=useAxios()
 
   const [showPassword, setShowPassword] = useState(false);
   const [passwordError, setPasswordError] = useState("");
@@ -56,11 +59,8 @@ export default function Register() {
 
           const newUser = { name, email, photo, role, status };
 
-          fetch("http://localhost:5174/users", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(newUser),
-          });
+        axiosSecure.post('/users',newUser)
+     .then(res=>console.log("after saving data",res.data))
 
           toast.success("Registration Successful!");
           form.reset();
