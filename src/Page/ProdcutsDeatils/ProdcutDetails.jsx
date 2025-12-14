@@ -65,7 +65,7 @@ export default function ProductDetails() {
             <span className="font-semibold">Price:</span> ${product.price}
           </p>
           <p className="text-gray-500 mb-1">
-            <span className="font-semibold">Available Quantity:</span> {product.quantity ?? 0}
+            <span className="font-semibold">Available Quantity:</span> {product.availableQuantity ?? 0}
           </p>
           <p className="text-gray-500 mb-1">
             <span className="font-semibold">Minimum Order:</span> {product.minOrder ?? 1}
@@ -84,9 +84,9 @@ export default function ProductDetails() {
             >
               Order  Now
             </button></div>
-
-          {/* Product Demo Video
-  {product.demoVideo && (
+{/* 
+          Product Demo Video */}
+  {/* {product.demoVideo && (
     
 
     <div className="w-full rounded-2xl overflow-hidden bg-black">

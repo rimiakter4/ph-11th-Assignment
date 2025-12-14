@@ -90,7 +90,7 @@ export default function AllProducts() {
                     <p className="text-sm text-gray-600">
                       Qty:{" "}
                       <span className="font-semibold">
-                        {product.quantity ?? 0}
+                        {product.availableQuantity ?? 0}
                       </span>
                     </p>
                   </div>

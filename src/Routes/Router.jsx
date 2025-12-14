@@ -8,6 +8,7 @@ import Register from "../Page/Register/Register";
 import AllProducts from "../Page/AllProducts/AllProducts";
 import { Component } from "react";
 import ProductDetails from "../Page/ProdcutsDeatils/ProdcutDetails";
+import BookingForm from "../Page/Bookingform/BookingForm";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,10 @@ Component:Login
     },{
       path:'products/:id',
       
-    Component:ProductDetails}
+    Component:ProductDetails},{
+      path:'/booking/:id',
+      Component:BookingForm
+    }
   ]
   },
 ]);
