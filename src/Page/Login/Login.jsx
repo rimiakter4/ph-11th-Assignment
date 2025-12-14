@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
@@ -12,37 +13,25 @@ const Login = () => {
   const location = useLocation();
   const emailref = useRef();
 
-  const [error, setError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
   // ✔ Login Handler
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
-
-    if (password.length < 6) {
-      setPasswordError("Length must be at least 6 characters");
-      return;
-    } else if (!/[A-Z]/.test(password)) {
-      setPasswordError("Must contain at least one uppercase letter");
-      return;
-    } else if (!/[a-z]/.test(password)) {
-      setPasswordError("Must contain at least one lowercase letter");
-      return;
-    } else {
-      setPasswordError("");
-    }
+  const onSubmit = (data) => {
+    const { email, password } = data;
 
     sininuser(email, password)
       .then(() => {
         toast.success("Login Successful!");
-        form.reset();
+        reset();
         navigate(location.state ? location.state : "/");
       })
-      .catch((err) => setError(err.code));
+      .catch((err) => toast.error(err.message));
   };
 
   // ✔ Reset Password
@@ -64,9 +53,9 @@ const Login = () => {
       .catch((err) => toast.error(err.message));
   };
 
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sky-100 via-indigo-100 to-purple-100 px-4">
-
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -77,30 +66,45 @@ const Login = () => {
           Login
         </h2>
 
-        <form onSubmit={handleLogin}>
-
+        <form onSubmit={handleSubmit(onSubmit)}>
           {/* Email */}
           <label className="font-semibold text-gray-700">Email</label>
           <input
             type="email"
-            name="email"
-            required
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                message: "Enter a valid email",
+              },
+            })}
             ref={emailref}
             className="w-full mt-1 mb-4 px-4 py-3 rounded-xl bg-white/80 border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none"
             placeholder="Enter your email"
           />
+          {errors.email && (
+            <p className="text-red-600 text-sm mb-2">{errors.email.message}</p>
+          )}
 
           {/* Password */}
           <label className="font-semibold text-gray-700">Password</label>
           <div className="relative mt-1 mb-2">
             <input
               type={showPassword ? "text" : "password"}
-              name="password"
-              required
+              {...register("password", {
+                required: "Password is required",
+                minLength: {
+                  value: 6,
+                  message: "Password must be at least 6 characters",
+                },
+                pattern: {
+                  value: /^(?=.*[a-z])(?=.*[A-Z]).*$/,
+                  message: "Must contain uppercase and lowercase letters",
+                },
+              })}
               className="w-full px-4 py-3 pr-10 rounded-xl bg-white/80 border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none"
               placeholder="Enter your password"
             />
-
             <span
               className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600"
               onClick={() => setShowPassword(!showPassword)}
@@ -108,12 +112,9 @@ const Login = () => {
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>
           </div>
-
-          {passwordError && (
-            <p className="text-red-600 text-sm mb-2">{passwordError}</p>
+          {errors.password && (
+            <p className="text-red-600 text-sm mb-2">{errors.password.message}</p>
           )}
-
-          {error && <p className="text-red-600 text-sm">{error}</p>}
 
           {/* Forgot Password */}
           <p

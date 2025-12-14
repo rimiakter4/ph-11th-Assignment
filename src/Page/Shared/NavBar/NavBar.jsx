@@ -13,7 +13,7 @@ const NavBar = () => {
   };
     const links=<> 
 <li><NavLink to='/'>Home</NavLink></li>
-<li><NavLink to='/coverage'>All-Product</NavLink></li>
+<li><NavLink to='/allProduct'>All-Product</NavLink></li>
 {
   user?<li><NavLink to='/dashboard'>Dashboard</NavLink></li>:<li><NavLink to='/sender'>About Us</NavLink></li>
 }

@@ -6,12 +6,14 @@ import Choose from './WhyChoose/Choose';
 import WhatGet from './WhatGet/WhatGet';
 import Brands from './Brands';
 import Work from './Work/Work';
+import LatestProducts from './SomeProduct/LatestProducts';
 
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
+            <LatestProducts></LatestProducts>
             <Work></Work>
              <WhatGet></WhatGet>
              <Brands></Brands>

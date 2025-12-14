@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 //   updateProfile,
 } from 'firebase/auth'
 // import { app } from '../firebase/firebase.config'
@@ -88,6 +89,20 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+  // UPDATE PROFILE
+const updateUserProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    })
+  }
+// download profile 
+
+
+
+
+
+
 
   const provider = new GoogleAuthProvider();
   const googlelogin = () => {
@@ -120,7 +135,7 @@ const AuthProvider = ({ children }) => {
     logout,
     googlelogin,
     resetPassword,
-    setLoading
+    setLoading,updateUserProfile
   };
 
   return (

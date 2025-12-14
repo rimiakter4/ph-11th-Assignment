@@ -1,0 +1,284 @@
+[ 
+
+ 
+    {
+      "name": "Classic Denim Jacket",
+      "category": "Jackets",
+      "price": 45.99,
+      "availableQuantity": 20,
+      "minimumOrder": 1,
+      "paymentOptions": ["Credit Card", "PayPal", "Cash on Delivery"],
+      "description": "A stylish denim jacket suitable for all seasons. Durable stitching and premium fabric.",
+      "images": [
+        "https://i.ibb.co.com/BVWx0M0D/pexels-angela-chacon-140940805-18020903.jpg",
+        "https://i.ibb.co.com/CynQ4F5/pexels-james-frid-81279-16428589.jpg"
+      ],
+      "demoVideo": "https://streamable.com/vckipa"
+    },
+    {
+      "name": "Men's Casual Shirt",
+      "category": "Shirts",
+      "price": 25.5,
+      "availableQuantity": 50,
+      "minimumOrder": 2,
+      "paymentOptions": ["Credit Card", "PayPal"],
+      "description": "Soft and breathable cotton casual shirt perfect for daily wear.",
+      "images": [
+        "https://i.ibb.co.com/vGDD2kt/photo-1596755094514-f87e34085b2c.avif",
+        "https://i.ibb.co.com/Y7jnGPM1/photo-1740711152088-88a009e877bb.avif"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=8571771-uhd_2160_4096_25fps.mp4"
+    },
+    {
+      "name": "Women's Summer Dress",
+      "category": "Dresses",
+      "price": 39.99,
+      "availableQuantity": 15,
+      "minimumOrder": 1,
+      "paymentOptions": ["Credit Card", "Stripe"],
+      "description": "Elegant summer dress perfect for outings and parties.",
+      "images": [
+        "https://i.ibb.co.com/xSj1hmrR/clothes-drying-table-against-wall-1048944-25910154.jpg",
+        "https://i.ibb.co.com/R4V4T0PS/studio-with-props-fashion-shoting-23-2148885692.avif"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=8970055-uhd_2160_3840_25fps.mp4"
+    },
+    {
+      "name": "Sports Sneakers",
+      "category": "Shoes",
+      "price": 60,
+      "availableQuantity": 30,
+      "minimumOrder": 1,
+      "paymentOptions": ["Credit Card", "Cash on Delivery"],
+      "description": "Lightweight sneakers designed for sports and daily use.",
+      "images": [
+        "https://i.ibb.co.com/zT8skS9g/black-outdoor-sneakers-isolated-white-backgrouns-636705-2508.jpg",
+        "https://i.ibb.co.com/DDqDMG7z/close-up-basketball-shoes-23-2150847262.avif"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=5034328-uhd_3840_2160_30fps.mp4"
+    },
+    {
+      "name": "Kids T-Shirt",
+      "category": "Kids Wear",
+      "price": 12.99,
+      "availableQuantity": 40,
+      "minimumOrder": 5,
+      "paymentOptions": ["Credit Card"],
+      "description": "Comfortable cotton t-shirt for kids aged 5–12.",
+      "images": [
+        "https://i.ibb.co.com/JghhzLk/children-s-clothes-laundry-line-against-wooden-background-101741-53.jpg",
+        "https://i.ibb.co.com/j9ZST1N6/blank-t-shirts-sneakers-pink-background-185193-70927.avif"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=7764680-uhd_2160_4096_25fps+(1).mp4"
+    },
+    {
+      "name": "Office Formal Pants",
+      "category": "Pants",
+      "price": 32.25,
+      "availableQuantity": 35,
+      "minimumOrder": 2,
+      "paymentOptions": ["Bank Transfer"],
+      "description": "Premium quality formal pants suitable for office work.",
+      "images": [
+        "https://i.ibb.co.com/zVgNWWCm/hand-holding-light-brown-beige-pants-23-2150756276.avif",
+        "https://i.ibb.co.com/ns2VrQnm/top-view-light-brown-beige-pants-still-life-23-2150756287.avif"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=7710914-uhd_2160_4096_25fps.mp4"
+    },
+    {
+      "name": "Winter Hooded Jacket",
+      "category": "Jackets",
+      "price": 75,
+      "availableQuantity": 10,
+      "minimumOrder": 1,
+      "paymentOptions": ["Credit Card", "PayPal"],
+      "description": "Warm and cozy hooded jacket designed for winter.",
+      "images": [
+        "https://i.ibb.co.com/N6LSYKwC/mens-winter-jacket-wooden-ladder-294697-4-1.jpg",
+        "https://i.ibb.co.com/sdVLpqXN/sport-jacket-clothing-1203-2533.jpg"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=3205919-hd_1080_1920_25fps.mp4"
+    },
+    {
+      "name": "Men’s Polo Shirt",
+      "category": "Shirts",
+      "price": 22.5,
+      "availableQuantity": 60,
+      "minimumOrder": 3,
+      "paymentOptions": ["Cash on Delivery"],
+      "description": "Comfortable and stylish polo shirt available in multiple colors.",
+      "images": [
+        "https://i.ibb.co.com/Rkz3yqXJ/red-shirt-with-yellow-collar-is-hanging-rack-971053-62.avif",
+        "https://i.ibb.co.com/1YspTcPf/close-up-clothes-hanging-white-background-1048944-5502394.jpg"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=7648782-uhd_3840_2160_30fps.mp4"
+    },
+    {
+      "name": "Women's Leggings",
+      "category": "Bottom Wear",
+      "price": 18.99,
+      "availableQuantity": 45,
+      "minimumOrder": 2,
+      "paymentOptions": ["Credit Card", "Stripe"],
+      "description": "Stretchable leggings suitable for yoga and workout.",
+      "images": [
+        "https://i.ibb.co.com/fdqmjq86/dark-navy-dotted-trousers-lady-s-folded-casual-pants-new-clothes-wood.jpg",
+        "https://i.ibb.co.com/0RrrkbKv/african-american-girl-purple-yoga-pants-studio-portrait-53876-102957.avif"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=3048928-uhd_3840_2160_24fps.mp4"
+    },
+    {
+      "name": "Baby Romper",
+      "category": "Kids Wear",
+      "price": 15.99,
+      "availableQuantity": 50,
+      "minimumOrder": 6,
+      "paymentOptions": ["PayPal"],
+      "description": "Soft and safe romper for newborn babies.",
+      "images": [
+        "https://i.ibb.co.com/j9c8gFTc/baby-clothes-isolated-white-background-93675-132191.avif",
+        "https://i.ibb.co.com/tM4ZVYK1/baby-clothes-set-with-hanger-wooden-table-380164-250597-1.jpg"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=7279141-uhd_2160_3840_24fps.mp4"
+    },
+    {
+      "name": "Formal Blazer",
+      "category": "Coats",
+      "price": 85,
+      "availableQuantity": 12,
+      "minimumOrder": 1,
+      "paymentOptions": ["Credit Card"],
+      "description": "Classic slim-fit formal blazer perfect for meetings.",
+      "images": [
+        "https://i.ibb.co.com/qYYL48T2/suit-stand-wooden-background-126740-307-1.jpg",
+        "https://i.ibb.co.com/JL9sxRX/elegant-gray-plaid-blazer-sophisticated-menswear-191095-80266.avif"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=7957049-uhd_2160_3840_30fps.mp4"
+    },
+    {
+      "name": "Cotton Kurti",
+      "category": "Traditional Wear",
+      "price": 28.5,
+      "availableQuantity": 25,
+      "minimumOrder": 3,
+      "paymentOptions": ["Cash on Delivery"],
+      "description": "Elegant cotton kurti with embroidery design.",
+      "images": [
+        "https://i.ibb.co.com/8Hzjsch/close-up-clothes-hanging-white-background-1048944-30890866.jpg",
+        "https://i.ibb.co.com/S2WqG6D/close-up-dress-hanging-white-background-1048944-17284327.jpg"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=12306501_1080_1920_30fps.mp4"
+    },
+    {
+      "name": "Track Pants",
+      "category": "Sportswear",
+      "price": 21.99,
+      "availableQuantity": 40,
+      "minimumOrder": 2,
+      "paymentOptions": ["Credit Card", "PayPal"],
+      "description": "Comfortable track pants ideal for workouts.",
+      "images": [
+        "https://i.ibb.co.com/YTPqhB9r/man-wearing-blue-yellow-pant-with-white-stripe-bottom-999340-95299.jpg",
+        "https://i.ibb.co.com/MyRhyGQg/man-jacket-sweatpants-stands-white-floor-1029623-93.avif"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=3048928-uhd_3840_2160_24fps.mp4"
+    },
+    {
+      "name": "Leather Belt",
+      "category": "Accessories",
+      "price": 14.99,
+      "availableQuantity": 70,
+      "minimumOrder": 5,
+      "paymentOptions": ["Credit Card"],
+      "description": "High-quality leather belt suitable for all outfits.",
+      "images": [
+        "https://i.ibb.co.com/zhnm2tPG/close-up-camera-1048944-964019.jpg",
+        "https://i.ibb.co.com/cS2vXDqJ/high-angle-view-belt-white-background-1048944-11373078.jpg"
+      ],
+      "demoVideo": "https://www.dropbox.com/preview/6654778-uhd_4096_2160_25fps.mp4?context=file_uploader_preview_file&role=personal"
+    },
+    {
+      "name": "Women’s Handbag",
+      "category": "Accessories",
+      "price": 55.99,
+      "availableQuantity": 18,
+      "minimumOrder": 1,
+      "paymentOptions": ["Bank Transfer", "PayPal"],
+      "description": "Stylish handbag with multiple compartments.",
+      "images": [
+        "https://i.ibb.co.com/d0nV5DfD/bag-hanging-from-furniture-item-indoors-23-2151073506-1.avif",
+        "https://i.ibb.co.com/RTjKpmQV/black-bag-with-scarf-140725-6390.avif"
+      ],
+      "demoVideo": "https://www.dropbox.com/preview/6649983-uhd_4096_2160_25fps.mp4?context=file_uploader_preview_file&role=personal"
+    },
+    {
+      "name": "Running Shoes",
+      "category": "Sportswear",
+      "price": 62.99,
+      "availableQuantity": 30,
+      "minimumOrder": 1,
+      "paymentOptions": ["Credit Card"],
+      "description": "Lightweight running shoes with strong grip.",
+      "images": [
+        "https://i.ibb.co.com/FbLYYKfh/blue-male-sneakers-shoes-isolated-background-267395-1273.avif",
+        "https://i.ibb.co.com/5hSq1cCV/pair-trainers-146667-7110.avif"
+      ],
+      "demoVideo": "https://www.dropbox.com/home?preview=5310847-uhd_3840_2160_25fps.mp4"
+    },
+    {
+      "name": "Men’s Hoodie",
+      "category": "Winter Wear",
+      "price": 35.99,
+      "availableQuantity": 22,
+      "minimumOrder": 1,
+      "paymentOptions": ["Credit Card", "Stripe"],
+      "description": "Soft fleece hoodie perfect for winter.",
+      "images": [
+        "https://i.ibb.co.com/jkkxxyYq/black-hooded-sweatshirt-hanging-from-display-front-neon-115919-33508.avif",
+        "https://i.ibb.co.com/QjtVkVGh/free-white-hoodie-mockup-with-fashionable-luxury-colorful-background-is-ready-edit-975749-276.jpg"
+      ],
+      "demoVideo": "https://www.dropbox.com/preview/WhatsApp%20Video%202025-12-13%20at%2011.19.53_23c53c01.mp4?context=file_uploader_preview_file&role=personal"
+    },
+    {
+      "name": "Women’s Scarf",
+      "category": "Accessories",
+      "price": 10.99,
+      "availableQuantity": 80,
+      "minimumOrder": 10,
+      "paymentOptions": ["Cash on Delivery"],
+      "description": "Lightweight and fashionable scarf.",
+      "images": [
+        "https://i.ibb.co.com/Jj3Bkp9L/brown-scarf-isolated-white-background-female-accessory-flat-lay-top-view-947073-21684.avif",
+        "https://i.ibb.co.com/sv0mDfZB/highquality-scarf-folded-neatly-with-logo-tag-wooden-table-1262165-2192.jpg"
+      ],
+      "demoVideo": "https://www.dropbox.com/preview/WhatsApp%20Video%202025-12-13%20at%2011.19.52_715d6b4e.mp4?context=file_uploader_preview_file&role=personal"
+    },
+    {
+      "name": "Gym Gloves",
+      "category": "Sportswear",
+      "price": 12.5,
+      "availableQuantity": 45,
+      "minimumOrder": 4,
+      "paymentOptions": ["Credit Card"],
+      "description": "Durable gym gloves with wrist support.",
+      "images": [
+        "https://i.ibb.co.com/tMwcxj8H/dumbbell-gym-gloves-511044-708.jpg",
+        "https://i.ibb.co.com/Mxwv9M6X/weightlifting-hands-with-gloves-23-2152017160-1.jpg"
+      ],
+      "demoVideo": "https://www.dropbox.com/preview/rimi%20akter/8519887-uhd_4096_1680_25fps.mp4?context=file_uploader_preview_file&role=work"
+    },
+    {
+      "name": "Women’s Sandals",
+      "category": "Footwear",
+      "price": 27.99,
+      "availableQuantity": 33,
+      "minimumOrder": 1,
+      "paymentOptions": ["Credit Card", "PayPal"],
+      "description": "Comfortable sandals for daily use.",
+      "images": [
+        "https://i.ibb.co.com/N6kRBMwh/women-s-accessories-elegant-sandals-with-low-heels-cross-body-bag-sunglasses-756748-45276.avif",
+        "https://i.ibb.co.com/ymnkYmNZ/stylish-woman-wearing-black-summer-shoes-with-straw-sole-outdoors-comfortable-sandals-beauty-fashion.jpg"
+      ],
+      "demoVideo": "https://www.dropbox.com/preview/rimi%20akter/3115442-hd_1920_1080_24fps.mp4?role=work"
+    }
+  ]

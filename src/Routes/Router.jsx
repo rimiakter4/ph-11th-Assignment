@@ -5,6 +5,7 @@ import Eorr from "../Page/Eorr";
 import Home from "../Page/Home/Home";
 import Login from "../Page/Login/Login";
 import Register from "../Page/Register/Register";
+import AllProducts from "../Page/AllProducts/AllProducts";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,9 @@ Component:Login
     },{
       path:'register',
       Component:Register
+    },{
+      path:'allProduct',
+      Component:AllProducts
     }
   ]
   },
