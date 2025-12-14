@@ -6,6 +6,8 @@ import Home from "../Page/Home/Home";
 import Login from "../Page/Login/Login";
 import Register from "../Page/Register/Register";
 import AllProducts from "../Page/AllProducts/AllProducts";
+import { Component } from "react";
+import ProductDetails from "../Page/ProdcutsDeatils/ProdcutDetails";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +26,10 @@ Component:Login
     },{
       path:'allProduct',
       Component:AllProducts
-    }
+    },{
+      path:'products/:id',
+      
+    Component:ProductDetails}
   ]
   },
 ]);

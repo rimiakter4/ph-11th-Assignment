@@ -1,6 +1,6 @@
 [ 
 
- 
+
     {
       "name": "Classic Denim Jacket",
       "category": "Jackets",
@@ -12,8 +12,9 @@
       "images": [
         "https://i.ibb.co.com/BVWx0M0D/pexels-angela-chacon-140940805-18020903.jpg",
         "https://i.ibb.co.com/CynQ4F5/pexels-james-frid-81279-16428589.jpg"
-      ],
-      "demoVideo": "https://streamable.com/vckipa"
+      ],    "demoVideo": "https://streamable.com/vckipa"
+   
+      
     },
     {
       "name": "Men's Casual Shirt",

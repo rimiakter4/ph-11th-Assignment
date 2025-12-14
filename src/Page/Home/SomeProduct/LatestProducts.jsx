@@ -70,7 +70,7 @@ export default function LatestProducts() {
 
                 <Link
                   to={`/products/${product._id}`}
-                  className="inline-block px-4 py-2 rounded-xl bg-black text-white hover:bg-gray-800 transition"
+                  className="inline-block px-4 py-2 rounded-xl  bg-gradient-to-r from-teal-400 to-indigo-500  text-white  hover:from-teal-600 hover:to-indigo-600 transition-colors duration-300 "
                 >
                   View Details
                 </Link>
