@@ -9,6 +9,7 @@ import AllProducts from "../Page/AllProducts/AllProducts";
 import { Component } from "react";
 import ProductDetails from "../Page/ProdcutsDeatils/ProdcutDetails";
 import BookingForm from "../Page/Bookingform/BookingForm";
+import Payment from "../Page/payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,9 @@ Component:Login
     Component:ProductDetails},{
       path:'/booking/:id',
       Component:BookingForm
+    },{
+      path:'/payment/:id',
+      Component:Payment
     }
   ]
   },
