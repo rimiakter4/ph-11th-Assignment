@@ -922,8 +922,14 @@ export default function BookingForm() {
     try {
       if (product.payment.type === "online") {
         const res = await axiosSecure.post(
-          "/create-checkout-session",
-          orderData
+          "/create-checkout-session",{
+            productTitle: product.name,
+  price: product.price,
+  quantity: safeQuantity,
+  email: user.email,
+  orderData, 
+          }
+        //   orderData
         );
         window.location.href = res.data.url;
       } 
@@ -953,7 +959,7 @@ export default function BookingForm() {
             timer: 2000,
             showConfirmButton: false
           });
-          navigate("/my-orders");
+          navigate("/dashboard/myOrders");
         }
       }
     }
