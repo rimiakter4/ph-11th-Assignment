@@ -16,6 +16,9 @@ import PaymentCancel from "../Page/DashBoard/PaymentCancel";
 import MyOrders from "../Page/DashBoard/MyOrder/MyOrder";
 import OrderDetail from "../Page/DashBoard/OrdersDetails/OrderDetail";
 import ManageUsers from "../Page/DashBoard/admin/MangeUsers";
+import Allproducts from "../Page/DashBoard/admin/AllProducts";
+import UpdateProduct from "../Page/DashBoard/admin/UpdateProduct";
+
 
 const router = createBrowserRouter([
   {
@@ -66,6 +69,12 @@ Component:Login
     },{
       path:'manageusers',
       Component:ManageUsers
+    },{
+      path:'allproducts',
+ Component:Allproducts
+    },{
+      path:'updateproduct/:id',
+      Component:UpdateProduct
     }
   ]
 

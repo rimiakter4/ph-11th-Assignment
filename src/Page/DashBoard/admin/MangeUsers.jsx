@@ -1,14 +1,15 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import { motion, AnimatePresence } from "framer-motion";
 import useAxios from "../../../Hooks/useAxios";
 
-
 const ManageUsers = () => {
-  const axiosSecure = useAxios(); 
+  const axiosSecure = useAxios();
+  const [localUsers, setLocalUsers] = useState([]);
 
-  // Fetch all users 
+  // Fetch users
   const {
     data: users = [],
     isLoading,
@@ -18,95 +19,152 @@ const ManageUsers = () => {
   } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/users"); 
-      console.log("Fetched users:", res.data); 
+      const res = await axiosSecure.get("/users");
       return res.data;
     },
     retry: 1,
   });
 
-  // Handle role update
-  const handleUpdateRole = (userId, newRole) => {
+  useEffect(() => {
+    setLocalUsers(users);
+  }, [users]);
+
+ 
+  const handleManageRole = (user) => {
     Swal.fire({
-      title: `Change role to ${newRole}?`,
-      icon: "question",
+      title: `Update Role for ${user.name}`,
+      input: "select",
+      inputOptions: {
+        buyer: "Buyer",
+        manager: "Manager",
+      },
+      inputValue: user.role === "suspended" ? "buyer" : user.role, 
+      inputPlaceholder: "Select a role",
       showCancelButton: true,
-      confirmButtonText: "Yes",
+      confirmButtonText: "Save Changes",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure
-          .patch(`/users/${userId}`, { role: newRole })
-          .then(() => {
-            refetch(); // Refetch users after update
-            Swal.fire(
-              "Updated!",
-              "User role updated successfully.",
-              "success"
-            );
-          })
-          .catch((err) => {
-            console.error(err);
-            Swal.fire("Error", "Failed to update user role.", "error");
-          });
+        const newRole = result.value;
+        updateUserRole(user._id, newRole);
       }
     });
   };
 
-  if (isLoading)
-    return <p className="text-center mt-10">Loading users...</p>;
+ 
+  const handleSuspend = (user) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: `Do you want to suspend ${user.name}? They will lose access.`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, Suspend!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        updateUserRole(user._id, "suspended");
+      }
+    });
+  };
 
-  if (isError)
-    return (
-      <p className="text-center mt-10 text-red-500">
-        Error fetching users: {error.message}
-      </p>
-    );
+  
+  const updateUserRole = (userId, newRole) => {
+    axiosSecure
+      .patch(`/users/${userId}`, { role: newRole })
+      .then(() => {
+        refetch();
+        Swal.fire("Updated!", `User is now ${newRole}.`, "success");
+      })
+      .catch((err) => {
+        console.error(err);
+        Swal.fire("Error", "Failed to update user.", "error");
+      });
+  };
+
+  const rowVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
+  };
+
+  if (isLoading) return <p className="text-center mt-10 text-xl">Loading users...</p>;
 
   return (
-    <div className="p-8">
-      <h2 className="text-3xl font-bold mb-6">Manage Users</h2>
+    <div className="p-4 md:p-16 bg-gray-50 min-h-screen">
+      <h2 className="text-4xl font-bold text-center text-indigo-700 mb-8">
+        Manage Users ({localUsers.length})
+      </h2>
 
-      {users.length === 0 ? (
-        <p className="text-center py-6 text-gray-500">No users found.</p>
-      ) : (
-        <table className="table-auto w-full border">
-          <thead className="bg-gray-700 text-white">
-            <tr>
-              <th className="px-4 py-2">Name</th>
-              <th className="px-4 py-2">Email</th>
-              <th className="px-4 py-2">Role</th>
-              <th className="px-4 py-2">Actions</th>
+      <div className="overflow-x-auto shadow-xl rounded-lg">
+        <table className="min-w-full divide-y divide-gray-300 bg-white">
+          <thead className=" bg-gradient-to-r from-teal-400 to-indigo-500  text-white">
+            <tr className="text-lg">
+              <th className="px-6 py-4 text-left font-semibold">Name</th>
+              <th className="px-6 py-4 text-left font-semibold">Email</th>
+              <th className="px-6 py-4 text-left font-semibold">Role</th>
+              <th className="px-6 py-4 text-center font-semibold">Actions</th>
             </tr>
           </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user._id} className="text-center border-b">
-                <td className="px-4 py-2">{user.name}</td>
-                <td className="px-4 py-2">{user.email}</td>
-                <td className="px-4 py-2">{user.role}</td>
-                <td className="px-4 py-2 flex justify-center gap-2">
-                  {user.role !== "manager" && (
-                    <button
-                      className="px-2 py-1 bg-green-500 text-white rounded"
-                      onClick={() => handleUpdateRole(user._id, "manager")}
+          <tbody className="divide-y divide-gray-200">
+            <AnimatePresence>
+              {localUsers.map((user) => (
+                <motion.tr
+                  key={user._id}
+                  variants={rowVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className={`${
+                    user.role === "suspended" ? "bg-red-50 opacity-70" : "hover:bg-gray-50"
+                  } transition`}
+                >
+                  <td className="px-6 py-4 whitespace-nowrap">{user.name}</td>
+                  <td className="px-6 py-4">{user.email}</td>
+                  <td className="px-6 py-4">
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-bold uppercase ${
+                        user.role === "manager"
+                          ? "bg-green-100 text-green-700"
+                          : user.role === "suspended"
+                          ? "bg-red-100 text-red-700"
+                          : "bg-blue-100 text-blue-700"
+                      }`}
                     >
-                      Make Manager
-                    </button>
-                  )}
-                  {user.role !== "suspended" && (
+                      {user.role}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 flex justify-center gap-3">
+                    {/* Update Role Button */}
                     <button
-                      className="px-2 py-1 bg-red-500 text-white rounded"
-                      onClick={() => handleUpdateRole(user._id, "suspended")}
+                      onClick={() => handleManageRole(user)}
+                      className="bg-indigo-500 hover:bg-indigo-600 text-white px-3 py-1 rounded text-sm shadow transition active:scale-95"
                     >
-                      Suspend
+                      Update Role
                     </button>
-                  )}
-                </td>
-              </tr>
-            ))}
+
+                    {/* Suspend/Activate Button */}
+                    {user.role === "suspended" ? (
+                      <button
+                        onClick={() => updateUserRole(user._id, "buyer")}
+                        className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm shadow transition active:scale-95"
+                      >
+                        Activate
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => handleSuspend(user)}
+                        className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm shadow transition active:scale-95"
+                      >
+                        Suspend
+                      </button>
+                    )}
+                  </td>
+                </motion.tr>
+              ))}
+            </AnimatePresence>
           </tbody>
         </table>
-      )}
+      </div>
     </div>
   );
 };
