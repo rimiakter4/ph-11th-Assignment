@@ -18,6 +18,7 @@ import OrderDetail from "../Page/DashBoard/OrdersDetails/OrderDetail";
 import ManageUsers from "../Page/DashBoard/admin/MangeUsers";
 import Allproducts from "../Page/DashBoard/admin/AllProducts";
 import UpdateProduct from "../Page/DashBoard/admin/UpdateProduct";
+import AllOrders from "../Page/DashBoard/admin/ALLOrders";
 
 
 const router = createBrowserRouter([
@@ -75,6 +76,9 @@ Component:Login
     },{
       path:'updateproduct/:id',
       Component:UpdateProduct
+    },{
+      path:'allorders',
+      Component:AllOrders
     }
   ]
 
