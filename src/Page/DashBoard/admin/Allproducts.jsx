@@ -83,10 +83,10 @@ const AllProducts = () => {
     );
 
   return (
-    <div className="p-4 md:p-10  bg-gray-50 min-h-screen">
+    <div className="p-4 md:p-10 bg-gradient-to-br from-sky-100 via-indigo-100 to-purple-100 p-6 ">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-indigo-800 mb-8 text-center uppercase tracking-widest">
-          Inventory Management ({products.length})
+          Inventory Management  admin  ({products.length})
         </h2>
 
         <div className="overflow-x-auto shadow-2xl rounded-2xl border  border-gray-100 bg-white">

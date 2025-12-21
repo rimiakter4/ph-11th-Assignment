@@ -38,6 +38,9 @@ const DashBoardLayOut = () => {
 <li><NavLink to='/dashboard/manageusers'>Manage Users </NavLink></li>
 <li><NavLink to='/dashboard/allproducts'> All Products</NavLink></li>
 <li><NavLink to='/dashboard/allorders'> All Orders</NavLink></li>
+<li><NavLink to='/dashboard/addproduct'> Add Product</NavLink></li>
+<li><NavLink to='/dashboard/manageproduct'>Manage Products</NavLink></li>
+<li><NavLink to='/dashboard/pendingorders'>Pending Orders</NavLink></li>
         {/* List item */}
         <li>
           <button className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Settings">

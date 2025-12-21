@@ -19,6 +19,9 @@ import ManageUsers from "../Page/DashBoard/admin/MangeUsers";
 import Allproducts from "../Page/DashBoard/admin/AllProducts";
 import UpdateProduct from "../Page/DashBoard/admin/UpdateProduct";
 import AllOrders from "../Page/DashBoard/admin/ALLOrders";
+import AddProduct from "../Page/DashBoard/Manager/AddProduct";
+import ManageProducts from "../Page/DashBoard/Manager/ManageProducts";
+import PendingOrders from "../Page/DashBoard/Manager/PendingOrders";
 
 
 const router = createBrowserRouter([
@@ -79,6 +82,15 @@ Component:Login
     },{
       path:'allorders',
       Component:AllOrders
+    },{
+      path:'addproduct',
+      Component:AddProduct
+    },{
+      path:'manageproduct',
+      Component:ManageProducts
+    },{
+      path:'pendingorders',
+      Component:PendingOrders
     }
   ]
 

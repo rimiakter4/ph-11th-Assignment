@@ -84,7 +84,7 @@ const MyOrder = () => {
   }
 
   return (
-    <div className="p-8 md:p-16">
+    <div className="p-8 bg-gradient-to-br from-sky-100 via-indigo-100 to-purple-100 p-6 md:p-16">
       {/* <h2 className="text-4xl font-bold text-center text-blue-700 mb-8">
         My Orders ( {orders.length} ) 
       </h2> */}

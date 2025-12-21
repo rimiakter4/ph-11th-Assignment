@@ -90,7 +90,7 @@ const ManageUsers = () => {
   if (isLoading) return <p className="text-center mt-10 text-xl">Loading users...</p>;
 
   return (
-    <div className="p-4 md:p-16 bg-gray-50 min-h-screen">
+    <div className="p-4 md:p-16 bg-gradient-to-br from-sky-100 via-indigo-100 to-purple-100 p-6 min-h-screen">
       <h2 className="text-4xl font-bold text-center text-indigo-700 mb-8">
         Manage Users ({localUsers.length})
       </h2>
