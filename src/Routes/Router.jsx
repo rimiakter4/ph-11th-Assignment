@@ -22,6 +22,7 @@ import AllOrders from "../Page/DashBoard/admin/ALLOrders";
 import AddProduct from "../Page/DashBoard/Manager/AddProduct";
 import ManageProducts from "../Page/DashBoard/Manager/ManageProducts";
 import PendingOrders from "../Page/DashBoard/Manager/PendingOrders";
+import ApproveOrders from "../Page/DashBoard/Manager/ApproveOrders";
 
 
 const router = createBrowserRouter([
@@ -91,6 +92,9 @@ Component:Login
     },{
       path:'pendingorders',
       Component:PendingOrders
+    },{
+      path:'approvedorders',
+      Component:ApproveOrders
     }
   ]
 
