@@ -19,7 +19,7 @@ export default function AllProducts() {
     // enabled: !!user?.email, 
     queryFn: async () => {
       const res = await axiosSecure.get(
-        '/all-products'
+        '/products'
       );
       return res.data;
     },

@@ -125,7 +125,7 @@ export default function PaymentSuccess() {
   useEffect(() => {
     if (!sessionId) return;
 
-    axios.post("http://localhost:5000/orders/confirm-payment", {
+    axios.post("https://germents-factory-server.vercel.app/orders/confirm-payment", {
       sessionId,
     })
     .then(() => {

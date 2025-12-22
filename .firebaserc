@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "germents-factory",
+    "prod": "germents-factory"
+  },
+  "targets": {},
+  "etags": {}
+}

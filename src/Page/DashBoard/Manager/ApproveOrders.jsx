@@ -523,31 +523,45 @@ const ApprovedOrders = () => {
   };
 
   // ৩. নতুন ট্র্যাকিং ডাটা সেভ করা
-  const handleAddTracking = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const trackingInfo = {
-      orderId: selectedOrder._id,
-      status: form.status.value,
-      location: form.location.value,
-      note: form.note.value,
-      updatedAt: new Date().toISOString(),
-    };
+//   const handleAddTracking = async (e) => {
+//     e.preventDefault();
+//     const form = e.target;
+//     const trackingInfo = {
+//       orderId: selectedOrder._id,
+//       status: form.status.value,
+//       location: form.location.value,
+//       note: form.note.value,
+//       updatedAt: new Date().toISOString(),
+//     };
 
-    try {
-      await axiosSecure.post("/tracking", trackingInfo);
-      Swal.fire({
-        icon: 'success',
-        title: 'Update Saved',
-        text: `Production status set to: ${form.status.value}`,
-        timer: 2000
-      });
-      form.reset();
-      document.getElementById("add_tracking_modal").close();
-    } catch (err) {
-      Swal.fire("Error", "Failed to add tracking update", "error");
-    }
+//     try {
+//       await axiosSecure.post("/tracking", trackingInfo);
+//       Swal.fire({
+//         icon: 'success',
+//         title: 'Update Saved',
+//         text: `Production status set to: ${form.status.value}`,
+//         timer: 2000
+//       });
+//       form.reset();
+//       document.getElementById("add_tracking_modal").close();
+//     } catch (err) {
+//       Swal.fire("Error", "Failed to add tracking update", "error");
+//     }
+//   };
+const handleAddTracking = async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const trackingInfo = {
+    orderId: selectedOrder._id, // এই আইডিটিই বায়ার পেজে useParams দিয়ে ধরা হয়
+    status: form.status.value,
+    location: form.location.value, // এই ভ্যালুটি ঠিকমতো যাচ্ছে কি না চেক করুন
+    note: form.note.value,
+    updatedAt: new Date().toISOString(),
   };
+
+  await axiosSecure.post("/tracking", trackingInfo);
+  // ... বাকি কোড
+};
 
   if (isLoading) return (
     <div className="flex justify-center items-center min-h-[400px]">
