@@ -15,7 +15,7 @@ const NavBar = () => {
 <li><NavLink to='/'>Home</NavLink></li>
 <li><NavLink to='/allProduct'>All-Product</NavLink></li>
 {
-  user?<li><NavLink to='/dashboard'>Dashboard</NavLink></li>:<li><NavLink to='/sender'>About Us</NavLink></li>
+  user?<li><NavLink to='/dashboard'>Dashboard</NavLink></li>:<li><NavLink to='/about'>About Us</NavLink></li>
 }
 {/* {
   user?<li><NavLink to='/coverage'> User Avatar</NavLink></li>:''

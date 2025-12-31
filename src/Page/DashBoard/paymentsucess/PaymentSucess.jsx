@@ -148,5 +148,13 @@ export default function PaymentSuccess() {
     });
   }, [sessionId, navigate]);
 
-  return null;
+// PaymentSuccess.jsx er return-e eta din jate shada screen na thake
+return (
+    <div className="min-h-screen flex items-center justify-center bg-green-50">
+        <div className="text-center">
+            <h2 className="text-2xl font-bold text-green-600">Verifying Payment...</h2>
+            <p>Please wait a moment.</p>
+        </div>
+    </div>
+);
 }

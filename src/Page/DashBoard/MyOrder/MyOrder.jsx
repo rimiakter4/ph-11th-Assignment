@@ -17,15 +17,29 @@ const MyOrder = () => {
   const [localOrders, setLocalOrders] = useState([]);
 
   // Fetch orders
-  const { data: orders = [],  isLoading } = useQuery({
-    queryKey: ["myOrders", user?.email],
-    enabled: !loading && !!user?.email,
-    queryFn: async () => {
-      const res = await axiosSecure.get(`/orders?email=${user.email}`);
-      return res.data;
-    },
-  });
-
+//   const { data: orders = [],  isLoading } = useQuery({
+//     queryKey: ["myOrders", user?.email],
+//     enabled: !loading && !!user?.email,
+//     // queryFn: async () => {
+//     //   const res = await axiosSecure.get(`/orders?email=${user.email}`);
+//     //   return res.data;
+//     // },
+//     queryFn: async () => {
+//   // আলাদা করে ইমেইল পাঠানোর দরকার নেই, কারণ ব্যাকএন্ড টোকেন থেকে ইমেইল পায়
+//   const res = await axiosSecure.get('/orders'); 
+//   console.log("Response from server:", res.data); // ডাটা আসছে কি না কনসোলে দেখুন
+//   return res.data;
+// },
+//   });
+const { data: orders = [], isLoading } = useQuery({
+  queryKey: ["myOrders", user?.email],
+  enabled: !loading && !!user?.email,
+  queryFn: async () => {
+    // শুধু '/orders' দিন, কুয়েরি প্যারামিটার (?email=...) বাদ দিন
+    const res = await axiosSecure.get('/orders'); 
+    return res.data;
+  },
+});
   // Sync fetched orders to local state
   useEffect(() => {
     setLocalOrders(orders);

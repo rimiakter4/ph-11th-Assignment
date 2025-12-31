@@ -27,6 +27,7 @@ import Profile from "../Page/DashBoard/Profile/Profile";
 import PraivateRouter from "./PraivateRouter";
 import AdminRoute from "./AdminRoute";
 import ManagerRoute from "./ManagerRoute";
+import About from "../Page/About";
 
 
 const router = createBrowserRouter([
@@ -55,7 +56,10 @@ Component:Login
       path:'/booking/:id',
       element:<PraivateRouter><BookingForm></BookingForm></PraivateRouter>
       // Component:BookingForm
-    },
+    },{
+      path:'/about',
+      Component:About
+    }
     // {
     //   path:'/payment/:id',
     //   Component:Payment
