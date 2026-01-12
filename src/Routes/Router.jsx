@@ -28,6 +28,16 @@ import PraivateRouter from "./PraivateRouter";
 import AdminRoute from "./AdminRoute";
 import ManagerRoute from "./ManagerRoute";
 import About from "../Page/About";
+import Inventory from "../Page/extraNavRoute/Inventory";
+import Production from "../Page/Production/Production";
+import DashdHome from "../Page/DashBoard/DashboardHome/DashHome";
+import DashHome from "../Page/DashBoard/DashboardHome/DashHome";
+import DashBoardRedirect from "../Page/DashBoard/DashboradREdriect/DashBoardRedirect";
+import Contact from "../Page/Contact";
+import Privacy from "../Page/Privacy";
+
+
+
 
 
 const router = createBrowserRouter([
@@ -59,6 +69,18 @@ Component:Login
     },{
       path:'/about',
       Component:About
+    },{
+      path:'/inventory',
+      Component:Inventory
+    },{
+      path:'/production',
+      Component:Production
+    },{
+      path:'/contact',
+      Component:Contact
+    },{
+      path:'/privacy',
+      Component:Privacy
     }
     // {
     //   path:'/payment/:id',
@@ -72,8 +94,19 @@ Component:Login
     // Component:DashBoardLayOut,
     children:[
       {
-      index: true, // এটিই ডিফল্ট পেজ হিসেবে কাজ করবে
-    Component:Profile
+      index: true, 
+      
+    element:<DashBoardRedirect></DashBoardRedirect>
+   
+    },
+    {
+      path:'profile',
+      Component:Profile
+    },
+    {
+      path:'admin-home',
+      element:<AdminRoute><DashHome></DashHome></AdminRoute>
+ 
     },
     {
       path:'success',

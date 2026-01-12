@@ -1,2 +1,27 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #14b8a6;
+  --color-secondary: #6366f1;
+  --color-accent: #f59e0b;
+}
+
+/* লাল দাগ সরাতে এই স্টাইলটি ব্যবহার করুন */
+@variant dark (&:where(.dark, .dark *));
+
+@plugin "daisyui";
+
+@layer base {
+  html {
+    background-color: white;
+    color: #0f172a;
+    transition: all 0.3s ease;
+  }
+
+  html.dark {
+    background-color: black;
+    color: white;
+  }
+}

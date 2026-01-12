@@ -7,6 +7,13 @@ import WhatGet from './WhatGet/WhatGet';
 import Brands from './Brands';
 import Work from './Work/Work';
 import LatestProducts from './SomeProduct/LatestProducts';
+import NewsLetter from './NewsLetter/NewsLetter';
+import LatestBlogs from './LatestBlogs/LatestBlogs';
+import FaqSection from './FAsECTION/faqSection';
+
+
+
+
 
 
 const Home = () => {
@@ -15,15 +22,17 @@ const Home = () => {
             <Banner></Banner>
             <LatestProducts></LatestProducts>
             <Work></Work>
+            <NewsLetter></NewsLetter>
              <WhatGet></WhatGet>
              <Brands></Brands>
             
              
-            <Production></Production>
+            {/* <Production></Production> */}
             
          <Choose></Choose>
-        
-        
+         <LatestBlogs></LatestBlogs>
+  
+        <FaqSection></FaqSection>
         </div>
     );
 };
